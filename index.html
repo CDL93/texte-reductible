@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Image avec citation et texte réductible</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Lato', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .image-container {
+      background-color: #ffffff;
+      padding: 70px 20px;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+
+    .image-container img {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+      height: auto;
+    }
+
+    .citation {
+      background-color: #000;
+      color: #ffffff;
+      padding: 50px 0 30px;
+      text-align: center;
+    }
+
+    .citation p {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      line-height: 2;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      display: inline-block;
+      max-width: 95%;
+      margin: 0 auto;
+      text-shadow:
+        1px 1px 0 #5F5BCD,
+       -1px -1px 0 #5F5BCD;
+    }
+
+    #texteBoite {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 80%;
+      padding: 0 4vw;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+
+    #texteBoite p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    button#toggleButton {
+      background-color: transparent;
+      color: #ffffff;
+      -webkit-text-stroke: 0.7px #5F5BCD;
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding: 10px 20px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .boutons {
+      margin: 50px auto 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .boutons a {
+      display: inline-block;
+      padding: 15px 25px;
+      min-width: 180px;
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      color: #ffffff;
+      text-decoration: none;
+      border: 2px solid #5F5BCD;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      -webkit-text-stroke: 0.4px #5F5BCD;
+      text-align: center;
+      box-shadow: 0 0 0 transparent;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .boutons a:active {
+      box-shadow: 0 0 15px #5F5BCD;
+      transform: scale(0.98);
+    }
+
+    /* VERSION MOBILE - responsive */
+    @media (max-width: 500px) {
+      .citation p {
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: 1.5px;
+      }
+
+      #texteBoite p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      button#toggleButton {
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+
+      .boutons a {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="https://static.wixstatic.com/media/6cdb93_4969ebe1fe9e40c2b63ad2de63b46141~mv2.jpg" alt="maquillage">
+  </div>
+
+  <div class="citation">
+    <p>"Du grand écran aux moments inoubliables,<br>chaque coup de pinceau raconte une histoire."</p>
+  </div>
+
+  <div id="texteBoite">
+    <p id="texteVisible">
+      Je suis <strong>Céline Dominguez</strong>, maquilleuse professionnelle passionnée depuis toujours par l’art du maquillage.<br><br>
+      Diplômée de la <strong>Make Up For Ever Academy</strong> de Bruxelles, j’ai développé mon expertise dans <strong>le cinéma</strong>, <strong>les effets spéciaux</strong> et <strong>le shooting éditorial.</strong>
+    </p>
+    <div id="texteCache" style="display: none;">
+      <p>
+        <br>Ma passion pour le maquillage va bien au-delà de l’esthétique : il est un véritable moyen d’expression et de narration. Spécialisée dans le monde du <strong>tournage</strong> et des <strong>SFX</strong>, j’aime donner vie à des personnages, créer des illusions et sublimer chaque détail.<br><br>
+        Mais mon travail ne s’arrête pas au plateau de tournage : J’interviens aussi pour <strong>les shootings artistiques</strong>, <strong>les mariages</strong> et <strong>les événements spéciaux</strong>, où chaque prestation est adaptée aux demandes de mes clients.<br><br>
+        <strong>Découvrez mon univers</strong> et laissez-vous transporter par l’art du maquillage.
+      </p>
+    </div>
+    <button id="toggleButton">Lire plus</button>
+  </div>
+
+  <div class="boutons">
+    <a href="https://www.cdominguezmakeup.com/copie-de-portfolio" target="_blank">Découvrez mes prestations</a>
+    <a href="https://www.cdominguezmakeup.com/copie-de-contact" target="_blank">Contactez-moi</a>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("toggleButton");
+    const texteCache = document.getElementById("texteCache");
+
+    let isExpanded = false;
+
+    toggleButton.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+      texteCache.style.display = isExpanded ? "block" : "none";
+      toggleButton.innerHTML = isExpanded ? "Lire moins" : "Lire plus";
+    });
+  </script>
+
+</body>
+</html>
