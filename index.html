@@ -85,6 +85,13 @@
       margin-top: 30px;
       cursor: pointer;
       border: 2px solid transparent;
+      -webkit-text-stroke: 0.7px #5F5BCD;
+      transition: all 0.3s ease;
+    }
+
+    button#toggleButton:hover {
+      color: #5F5BCD;
+      text-shadow: 0 0 5px #5F5BCD;
     }
 
     .boutons {
@@ -107,16 +114,23 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center;
+      -webkit-text-stroke: 0.4px #5F5BCD;
       box-shadow: 0 0 0 transparent;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .boutons a:nth-child(1) {
-      min-width: 260px; 
+      min-width: 260px;
     }
 
     .boutons a:nth-child(2) {
-      min-width: 200px; 
+      min-width: 200px;
+    }
+
+    .boutons a:hover {
+      background-color: #5F5BCD;
+      color: white;
+      box-shadow: 0 0 10px #5F5BCD;
     }
 
     .boutons a:active {
