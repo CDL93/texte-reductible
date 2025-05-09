@@ -28,7 +28,7 @@
     }
 
     .citation {
-      background-color: #000000;
+      background-color: #000;
       padding: 50px 0 30px;
     }
 
@@ -44,9 +44,7 @@
       display: inline-block;
       max-width: 95%;
       margin: 0 auto;
-      text-shadow:
-        1px 1px 0 #5F5BCD,
-       -1px -1px 0 #5F5BCD;
+      text-shadow: 1px 1px 0 #5F5BCD, -1px -1px 0 #5F5BCD;
     }
 
     #texteBoite {
@@ -84,13 +82,12 @@
       padding: 10px 20px;
       margin-top: 30px;
       cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #5F5BCD;
+      transition: text-shadow 0.3s ease, transform 0.2s ease;
     }
 
-    button#toggleButton:hover {
-      color: #5F5BCD;
-      text-shadow: 0 0 5px #5F5BCD;
+    button#toggleButton:active {
+      transform: scale(0.98);
     }
 
     .boutons {
@@ -102,23 +99,21 @@
     }
 
     .boutons a {
-     display: inline-block;
-     padding: 15px 25px;
-     font-family: 'Cinzel', serif;
-     font-size: 20px;
-     color: #ffffff;
-     background-color: transparent;
-     text-decoration: none;
-     border: 2px solid #5F5BCD;
-     border-radius: 50px;
-     text-transform: uppercase;
-     letter-spacing: 2px;
-     text-align: center;
-     box-shadow: none;
-     transition: transform 0.2s ease;
-     text-shadow: 0 0 5px #5F5BCD;
+      display: inline-block;
+      padding: 15px 25px;
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: #ffffff;
+      background-color: transparent;
+      text-decoration: none;
+      border: 2px solid #5F5BCD;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 0 5px #5F5BCD;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
-
 
     .boutons a:nth-child(1) {
       min-width: 260px;
@@ -129,8 +124,6 @@
     }
 
     .boutons a:hover {
-      background-color: #5F5BCD;
-      color: white;
       box-shadow: 0 0 10px #5F5BCD;
     }
 
@@ -139,8 +132,7 @@
       transform: scale(0.98);
     }
 
-    /* VERSION MOBILE */
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
       .citation p {
         font-size: 16px;
         line-height: 1.6;
