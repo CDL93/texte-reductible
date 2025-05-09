@@ -29,13 +29,10 @@
 
     .citation {
       background-color: #000;
-      color: #ffffff;
       padding: 50px 0 30px;
-      text-align: center;
     }
 
     .citation p {
-      color: #ffffff;
       font-family: 'Cinzel', serif;
       font-size: 24px;
       font-weight: 700;
@@ -78,7 +75,6 @@
     button#toggleButton {
       background-color: transparent;
       color: #ffffff;
-      -webkit-text-stroke: 0.7px #5F5BCD;
       font-family: 'Cinzel', serif;
       font-size: 24px;
       border: none;
@@ -88,6 +84,7 @@
       padding: 10px 20px;
       margin-top: 30px;
       cursor: pointer;
+      border: 2px solid transparent;
     }
 
     .boutons {
@@ -101,7 +98,6 @@
     .boutons a {
       display: inline-block;
       padding: 15px 25px;
-      min-width: 180px;
       font-family: 'Cinzel', serif;
       font-size: 20px;
       color: #ffffff;
@@ -110,10 +106,17 @@
       border-radius: 50px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      -webkit-text-stroke: 0.4px #5F5BCD;
       text-align: center;
       box-shadow: 0 0 0 transparent;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .boutons a:nth-child(1) {
+      min-width: 260px; 
+    }
+
+    .boutons a:nth-child(2) {
+      min-width: 200px; 
     }
 
     .boutons a:active {
@@ -121,31 +124,38 @@
       transform: scale(0.98);
     }
 
-  @media (max-width: 500px) {
-  .citation p {
-    font-size: 16px;
-    line-height: 1.6;
-    letter-spacing: 1.2px;
-  }
+    /* VERSION MOBILE */
+    @media (max-width: 500px) {
+      .citation p {
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: 1.2px;
+      }
 
-  #texteBoite p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
+      #texteBoite p {
+        font-size: 13px;
+        line-height: 1.4;
+      }
 
-  button#toggleButton {
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
+      button#toggleButton {
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
 
-  .boutons a {
-    font-size: 15px;
-    letter-spacing: 1px;
-    padding: 15px 8px;
-    width: 180px; 
-  }
-}
+      .boutons a {
+        font-size: 15px;
+        letter-spacing: 1px;
+        padding: 15px 8px;
+      }
 
+      .boutons a:nth-child(1) {
+        min-width: 220px;
+      }
+
+      .boutons a:nth-child(2) {
+        min-width: 180px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -181,7 +191,6 @@
   <script>
     const toggleButton = document.getElementById("toggleButton");
     const texteCache = document.getElementById("texteCache");
-
     let isExpanded = false;
 
     toggleButton.addEventListener("click", () => {
